@@ -1,7 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Box, Container } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import AppBar from '../components/dashboardLayout/appBar';
 import Drawer from '../components/dashboardLayout/drawer';
 
@@ -12,29 +11,28 @@ interface Props {
 function Dashboard({ children }: Props) {
   const [openDrawer, setopenDrawer] = useState(true);
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex' }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: 'flex',
+        background: theme.palette.grey.A100,
+        height: '100vh',
+        overflow: 'hidden',
+      }}
+    >
       <Drawer
         open={openDrawer}
         handleOpenDrawer={() => setopenDrawer(!openDrawer)}
       />
-      <Box
-        sx={{
-          width: !openDrawer
-            ? '100%'
-            : !matches
-            ? '100%'
-            : 'calc(100% - 240px)',
-          overflowX: 'hidden',
-        }}
-      >
+      <Box sx={{ width: '100%', overflow: 'hidden', height: '100vh' }}>
         <AppBar handleOpenDrawer={() => setopenDrawer(!openDrawer)} />
-        <Container>
-          {children}
-          {matches ? 'true' : 'fals'}
-        </Container>
+        <Box sx={{ overflow: 'auto', height: '100%' }}>
+          <Container sx={{ paddingBottom: '100px', paddingTop: 3 }}>
+            {children}
+          </Container>
+        </Box>
       </Box>
     </Box>
   );
