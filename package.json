@@ -20,12 +20,15 @@
     "faker": "^5.5.3",
     "json2mq": "^0.2.0",
     "next": "latest",
+    "rc-table": "^7.22.2",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.3.0",
     "react-countup": "^6.0.0",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-table": "^7.7.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.7.2",
     "@emotion/eslint-plugin": "^11.5.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
@@ -33,6 +36,7 @@
     "@types/faker": "^5.5.9",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.33",
+    "@types/react-table": "^7.7.9",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "babel-jest": "27.0.6",
