@@ -13,6 +13,7 @@ import Logout from '@mui/icons-material/Logout';
 
 interface Props {
   handleMobileMenuClose?: () => void;
+  handleMenuClose?: () => void;
 }
 
 function Profile({ handleMobileMenuClose }: Props) {
